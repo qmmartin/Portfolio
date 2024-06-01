@@ -1,6 +1,6 @@
 # Using Stable Diffusion's Variational Autoencoders for Lossy Image Compression.
 
-This project was originally created as a year long research project to be presented at the International Science and Engineering Fair (ISEF) regional competition for the Arkansas School for Mathematics, Sciences, and the Arts.
+This project was originally created as a year long research project to be presented at the West Central Regional Science fair competition at the Arkansas School for Mathematics, Sciences, and the Arts.
 
 <img src="images\vae_example.png" width="800">
 
