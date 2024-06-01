@@ -20,7 +20,7 @@ Worked on new code to utilize model following hugging face's official from_pretr
 
 The following is an image of the error I am currently recieving: 
 
-<img src="Images\model_nf.PNG" width="800">
+<img src="images\model_nf.PNG" width="800">
 
 I believe this error is coming from my avoidance of the hugging face API for online Stable Diffusion models. It seems I have no other choice than to access the repositories held on the site instead of using a local model.
 
@@ -36,7 +36,7 @@ Installed libraries fastdownload matplotlib using pip
 
 Added code that can perform VAE compression on an image and it seemed to work, at least in the backend side of things, despite some runtime warnings. There is currently no way to actually view this image as it is not compatible with cv2 in its current form so I will need to add some method of viewing the image. Following is the response the code gives when ran, showing that the program is working in theory:
 
-<img src="Images\functional.PNG" width="800">
+<img src="images\functional.PNG" width="800">
 
 ## 10-16-2023
 
@@ -50,7 +50,7 @@ Worked on code that would successfully display the compressed images and it work
 
 Compressed latents:
 
-<img src="Images\vae_success.PNG" width="800">
+<img src="images\vae_success.PNG" width="800">
 
 ## 10-26-2023 
 
@@ -58,7 +58,7 @@ Created code in vae_compression that would decompress the latent representation 
 
 It works but the images are slightly off as the variation from the AI alters the image slightly.
 
-<img src="Images\comparison_img.PNG" width="800">
+<img src="images\comparison_img.PNG" width="800">
 
 As you can probably tell in this photo, the squirrels look very similar, but they are slightly different, some notable differences include the glimmer on the eye, as well as many of the hairs on the tail and ears.
 
