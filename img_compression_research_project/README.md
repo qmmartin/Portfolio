@@ -1,15 +1,16 @@
-# Capstone Science Fair Project
-Using Stable Diffusion's Variational Autoencoders for Lossy Image Compression.
+# Using Stable Diffusion's Variational Autoencoders for Lossy Image Compression.
 
-<img src="Images\vae_example.png" width="800">
+This project was originally created as a year long research project to be presented at the International Science and Engineering Fair (ISEF) regional competition for the Arkansas School for Mathematics, Sciences, and the Arts.
 
-This project is currently a work in progress.
+<img src="images\vae_example.png" width="800">
 
 The ultimate goal of this project is to be able to compress images while maintaining highly similar quality to the original image and avoiding the introduction of artifacts.
 
 RunwayML's Stable Diffusion v1.5 was utilized for the purposes of this project, specifically the lower storage-intensive 'pruned-emaonly' weight.
 
 The scalar used frequently in the code is from [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752) and serves as the inverse standard deviation for the latents of the Variational Autoencoder used in Stable Diffusion 1.5.
+
+The paper found within this file presents much more information than is easily shown within a markdown file. Please read the paper for further information on the project.
 
 # Features
 - Img2img VAE compression
