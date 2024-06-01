@@ -24,7 +24,7 @@ The three above images show each image translated onto the canvas, although they
 
 To merge the images, I created 2 masks that served as maps to place the outer images onto. Each mask had a section of full pixels that would fade as they got closer to the original image. This prevented the pixels from overlapping and giving uint8 overflow errors, which would result in discoloration around the merge points.
 
-<img src="output_imgs/PanoFinal.png" width="600">
+<img src="output_imgs/panoFinal.png" width="600">
 
 After successfully merging the images together into a single panorama, I had to crop the full image down to show just the panorama image as well as the box around it. To do this, I created bounding boxes around the panorama using contours, then removed all of the black space around the box. The following image is the final cropped panorama result.
 
