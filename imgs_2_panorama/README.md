@@ -2,7 +2,7 @@
 
 *This markdown file is meant to serve as a quick summary of the pdf presentation listed within this file*
 
-This assignment was created for a Graphics Programming class focusing on using Python and various libraries to achieve different Computer Vision effects and functions.
+This project was created for an assignment in my Graphics Programming class focused on using Python and various libraries to achieve different Computer Vision effects and functions.
 
 This specific assignment required the use of Numerical Python, known as NumPy and OpenCV, known as cv2.
 
