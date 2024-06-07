@@ -35,14 +35,14 @@ Open the project in your preferred IDE.
 2. Run 'connect4Gameame.java'
 3. Use Terminal to input text according to prompt
 
-<img src="images\textGame1.png" width="400">
+<img src="images\textGame1.PNG" width="400">
 
 #### For GUI-Based Game
 1. Open 'gameProject' in Visual Studio or other IDE
 2. Run 'connect4GUI.java'
 3. Click columns to place pieces
 
-<img src="images\guiGame1.png" width="400">
+<img src="images\guiGame1.PNG" width="400">
 
 ### How to Play
 1. Start the game by running the Main.java file.
