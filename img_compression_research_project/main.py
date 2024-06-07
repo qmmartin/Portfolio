@@ -53,7 +53,6 @@ webp_compress(text_img)
 webp_compress(art_img)
 webp_compress(sax_img)
 
-record_data()
 
 
 

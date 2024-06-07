@@ -1,9 +1,9 @@
-public class Connect4Board {
+public class connect4Board {
     private final int ROWS = 6;
     private final int COLS = 7;
     public int[][] board;
 
-    public Connect4Board() {
+    public connect4Board() {
         board = new int[ROWS][COLS];
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {

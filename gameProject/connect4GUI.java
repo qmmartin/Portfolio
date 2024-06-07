@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.geom.*;
 
-public class Connect4GUI {
+public class connect4GUI {
     public static void main(String[] args) {
-        Connect4Board board = new Connect4Board();
+        connect4Board board = new connect4Board();
         JFrame frame = new JFrame("Connect 4");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MyPanel panel = new MyPanel(board);
@@ -24,14 +24,14 @@ public class Connect4GUI {
 }
 
 class MyPanel extends JPanel implements MouseMotionListener, KeyListener, MouseListener, ActionListener {
-    Connect4Board board;
+    connect4Board board;
     int ROWS=6;
 	int COLS=7;
     int col;
     int player=1;
     Point2D transform = new Point2D.Double(-20, -20);
 
-    public MyPanel(Connect4Board board) {
+    public MyPanel(connect4Board board) {
         this.board = board;
     }
     protected void paintComponent(Graphics g) {
@@ -108,7 +108,7 @@ class MyPanel extends JPanel implements MouseMotionListener, KeyListener, MouseL
     }
     public void keyPressed(KeyEvent e) {
         if(board.hasPlayerWon(1)||board.hasPlayerWon(2)||board.isBoardFull()){
-            board = new Connect4Board();
+            board = new connect4Board();
             repaint();
         }
     }

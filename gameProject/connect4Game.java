@@ -1,13 +1,13 @@
 import java.util.*;
 import java.util.Arrays;
 
-public class Connect4Game {
-    private Connect4Board board;
+public class connect4Game {
+    private connect4Board board;
     private final int ROWS = 6;
     private final int COLS = 7;
 
-    public Connect4Game() {
-        board = new Connect4Board();
+    public connect4Game() {
+        board = new connect4Board();
         System.out.println("Welcome to Connect4!");
     }
 
@@ -49,7 +49,7 @@ public class Connect4Game {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Scanner yn = new Scanner(System.in);
-        Connect4Game game = new Connect4Game();
+        connect4Game game = new connect4Game();
         boolean playAgain = true;
         while(playAgain){
             while(game.getWinner()==0){

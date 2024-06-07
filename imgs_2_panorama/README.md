@@ -1,31 +1,52 @@
 # imgs_2_panorama
 
-*This markdown file is meant to serve as a quick summary of the pdf presentation listed within this file*
+## Overview
+This project was created as part of an assignment in a Graphics Programming class, focusing on using Python and various libraries to achieve different computer vision effects and functions. The goal of the project was to combine three overlapping images into a single panoramic image without reducing the size of the original images.
 
-This project was created for an assignment in my Graphics Programming class focused on using Python and various libraries to achieve different Computer Vision effects and functions.
+For an in-depth breakdown of the code, please read the presentation found at 'imgs_2_panorama.pdf'
 
-This specific assignment required the use of Numerical Python, known as NumPy and OpenCV, known as cv2.
+## Features
+- Uses NumPy and OpenCV libraries for image processing.
+- Combines multiple images into a seamless panorama.
+- Handles keypoint detection and matching.
+- Crops the final panorama to remove excess black space.
 
-For my sample images, I used three images of one of the last Piggly Wiggly supercenters that I took that Spring Break.
+## Getting Started
 
-The project required me to take three different overlapping photos of a single location and combine the images into a single panorama image, without making the original images smaller.
+### Prerequisites
+- Python 3.6 or higher.
+- An Integrated Development Environment (IDE) like Visual Studio Code.
+- NumPy library.
+- OpenCV library.
 
-To achieve this goal, I first created keypoint matches between the leftmost and center images, as well as a separate keypoint match between the center and rightmost images. 
+### Installation
+Clone the repository:
 
-<img src="output_imgs/matches.png" width="600">
+git clone https://github.com/qmmartin/Portfolio
 
-As shown in the above image, I was able to create matches of key points between the two outer images and the center image.
+Open the project in your preferred IDE.
 
-These keypoints allowed me to find where to place the images in order to correctly line them up to be translated onto a new canvas.
+### Running the Project
+1. Open the 'imgs_2_panorama' folder in Visual Studio or other IDE
+2. Run pano.py
 
-<img src="output_imgs/out1.png" width="400">   <img src="output_imgs/out2.png" width="400">   <img src="output_imgs/out3.png" width="400">
+### How It Works
+1. Keypoint Matching:
+   - The script first creates keypoint matches between the leftmost and center images, as well as between the center and rightmost images.
 
-The three above images show each image translated onto the canvas, although they were in the upper left corner. To counterract this, I attempted to merge the images together before cropping the new canvas to fit the size, as where the panorama is formed did not matter as long as the panorama was completed and could be cropped afterwards.
+        <img src="output_imgs\matches.png" width="400">
 
-To merge the images, I created 2 masks that served as maps to place the outer images onto. Each mask had a section of full pixels that would fade as they got closer to the original image. This prevented the pixels from overlapping and giving uint8 overflow errors, which would result in discoloration around the merge points.
+2. Image Translation:
+   - Using the keypoints, the script determines the correct placement of each image on a new canvas.
 
-<img src="output_imgs/panoFinal.png" width="600">
+        <img src="output_imgs\out1.png" width="400">  <img src="output_imgs\out2.png" width="400">  <img src="output_imgs\out3.png" width="400">
 
-After successfully merging the images together into a single panorama, I had to crop the full image down to show just the panorama image as well as the box around it. To do this, I created bounding boxes around the panorama using contours, then removed all of the black space around the box. The following image is the final cropped panorama result.
+3. Image Merging:
+   - Masks are created to blend the overlapping sections of the images, preventing pixel overlap and discoloration.
 
-<img src="output_imgs/cropped_panoFinal.png" width="600">
+        <img src="output_imgs\panoFinal.png" width="400">
+
+4. Cropping:
+   - The final panorama is cropped to remove excess black space, resulting in the final panoramic image.
+
+        <img src="output_imgs\cropped_panoFinal.png" width="400">

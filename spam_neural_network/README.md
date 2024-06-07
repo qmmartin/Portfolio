@@ -1,18 +1,48 @@
 # Spam Neural Network
 
-This project was created for an assignment in my Programming II class. The assignment required the creation and training of a boolean neural network using a simple dataset.
+## Overview
 
-For my project, I decided to create a neural network that could read the subject line of an email, and guess whether or not the email was "Spam" or "Ham."
+This project was created as part of an assignment in a Programming II class. The assignment required the creation and training of a boolean neural network using a simple dataset. The goal was to create a neural network that could read the subject line of an email and determine whether the email was "Spam" or "Ham."
 
-"Spam" refers to unsolicited and often irrelevant or inappropriate messages sent over the internet to a large number of recipients while "Ham" refers to legitimate, non-spam emails that are desired and expected by the recipient.
+- Spam: Unsolicited and often irrelevant or inappropriate messages sent over the internet to a large number of recipients.
+- Ham: Legitimate, non-spam emails that are desired and expected by the recipient.
 
-The Neural Network was trained on a dataset of negative keywords and phrases that are common in spam emails.
+## Features
+- Creation and training of a neural network using Scikit-Learn.
+- Classification of email subject lines as Spam or Ham.
+- Accuracy evaluation of the neural network's predictions.
 
-After the training, the network was tested on a dataset of email subject lines, with some being Spam and some being Ham. After the neural network labelled each email as Spam or Ham, the list of neural network guesses was tested against the list of correct email assessments.
+## Getting Started
 
-Following the testing process, a percentage score was printed in the console, giving a direct numerical value of accuracy. 
+### Prerequisites
+- Python 3.6 or higher.
+- Scikit-Learn library.
+- Pandas library.
 
-After running the neural network 10 times, the average accuracy of its Spam assessment was 98.52%.
+### Installation
+Clone the repository:
 
-*Running this code requires the installation of the Scikit-Learn and Pandas libraries
+git clone https://github.com/qmmartin/Portfolio
 
+Open the project in your preferred IDE.
+
+### Python Scripts
+- nn.py: The main script to run the neural network training and testing process.
+
+### How It Works
+
+1. Training the Neural Network:
+    - The neural network is trained on the dataset of negative keywords and phrases.
+    - Scikit-Learn is used to create and train the neural network.
+
+2. Testing the Neural Network:
+    - The trained neural network is tested on a separate dataset of email subject lines, classifying each as Spam or Ham.
+    - The network's guesses are compared to the correct classifications to determine accuracy.
+
+3. Accuracy Evaluation:
+    - A percentage score of accuracy is printed to the console.
+    - The average accuracy is calculated after running the neural network 10 times, with the final average accuracy being 98.52%.
+
+## Acknowledgements
+- Sci-kit Learn - https://scikit-learn.org/stable/
+- Pandas - https://pandas.pydata.org/docs/getting_started/install.html
