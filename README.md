@@ -1,23 +1,30 @@
 # Portfolio Repository
-Welcome to my online portfolio, showcasing my works in computer science and programming. This repository is organized to provide you with easy access to my various projects and their details.
 
-## Structure
-Each project within this repository has its own directory. Inside each directory, you will find a README file written in Markdown. These README files provide a concise summary of the project, detailing its purpose, functionality, and any other relevant information.
-
-## How to Navigate
-- Browse the directories: Each directory corresponds to a specific project.
-- Read the README files: Open the README.md file in each directory to get a detailed description of the project.
+This repository is a curated portfolio of Python and AI-focused projects spanning computer vision, neural networks, and practical automation.
 
 ## Featured Projects
-- **gameProject:** A java project focused on recreating Connect4 using object oriented programming.
 
-- **img_compression_research_project:** A python project aimed at compressing images using a form of Artificial Intelligence (AI) known as Variational Autoencoders (VAEs).
+- **game_automation_bot**
+	Personal automation prototype that uses OpenCV template matching and PyAutoGUI to play Grub Guardian autonomously in BlueStacks. Focuses on computer vision-driven state detection, real-world utility, and iterative reliability improvements.
 
-- **imgs_2_panorama:** A python project that combines three separate overlapping images into a single cropped Panorama image using various computer vision techniques.
+- **img_compression_research_project**
+	Research project exploring lossy image compression with Stable Diffusion's Variational Autoencoder (VAE), evaluated with SSIM, MSE, and PSNR to compare quality-vs-size tradeoffs.
 
-- **spam_neural_network:** A python project focused on neural networks that trains a Neural Network then analyzes various emails to determine whether they are "Spam" or "Ham."
+- **imgs_2_panorama**
+	Computer vision project that stitches overlapping images into a panorama using keypoint detection, geometric alignment, blending, and final crop cleanup.
+
+- **spam_neural_network**
+	Supervised learning project that trains and evaluates a spam-vs-ham email subject classifier using scikit-learn and tabular text features.
+
+## Repository Structure
+
+Each project has its own folder and README with:
+
+- Project overview and motivation
+- Technical approach and implementation details
+- Requirements and run instructions
+- Results, limitations, and future improvements
 
 ## Contact
-Quade Martin - [probablyquade@gmail.com]
 
-Feel free to explore and reach out if you have any questions or comments.
+Quade Martin - probablyquade@gmail.com
