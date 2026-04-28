@@ -5,16 +5,16 @@ This repository is a curated portfolio of Python and AI-focused projects spannin
 ## Featured Projects
 
 - **game_automation_bot**
-	Personal automation prototype that uses OpenCV template matching and PyAutoGUI to play Grub Guardian autonomously in BlueStacks. Focuses on computer vision-driven state detection, real-world utility, and iterative reliability improvements.
+	- Personal automation prototype that uses OpenCV template matching and PyAutoGUI to play Grub Guardian autonomously in BlueStacks. Focuses on computer vision-driven state detection, real-world utility, and iterative reliability improvements.
 
 - **img_compression_research_project**
-	Research project exploring lossy image compression with Stable Diffusion's Variational Autoencoder (VAE), evaluated with SSIM, MSE, and PSNR to compare quality-vs-size tradeoffs.
+	- Research project exploring lossy image compression with Stable Diffusion's Variational Autoencoder (VAE), evaluated with SSIM, MSE, and PSNR to compare quality-vs-size tradeoffs.
 
 - **imgs_2_panorama**
-	Computer vision project that stitches overlapping images into a panorama using keypoint detection, geometric alignment, blending, and final crop cleanup.
+	- Computer vision project that stitches overlapping images into a panorama using keypoint detection, geometric alignment, blending, and final crop cleanup.
 
 - **spam_neural_network**
-	Supervised learning project that trains and evaluates a spam-vs-ham email subject classifier using scikit-learn and tabular text features.
+	- Supervised learning project that trains and evaluates a spam-vs-ham email subject classifier using scikit-learn and tabular text features.
 
 ## Repository Structure
 
