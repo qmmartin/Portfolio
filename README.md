@@ -23,7 +23,7 @@ Each project has its own folder and README with:
 - Project overview and motivation
 - Technical approach and implementation details
 - Requirements and run instructions
-- Results, limitations, and future improvements
+- Results, limitations, and future improvements where applicable
 
 ## Contact
 

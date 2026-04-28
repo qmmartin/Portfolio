@@ -1,88 +1,90 @@
-# Using Stable Diffusion's Variational Autoencoders for Lossy Image Compression.
+# VAE Image Compression Research Project
+
+This project explores lossy image compression using Stable Diffusion's Variational Autoencoder (VAE), then evaluates reconstruction quality with quantitative image metrics.
 
 ## Overview
 
-This project was originally created as a year long research project to be presented at the West Central Regional Science fair competition at the Arkansas School for Mathematics, Sciences, and the Arts.
+This work was developed as a year-long research project for the West Central Regional Science Fair at the Arkansas School for Mathematics, Sciences, and the Arts.
 
-This project is a python-based program that utilizies Stable Diffusion's Variational Autoencoder (VAE) to compress images. The images are then analyzed and graded based on their accuracy to the original, and these scores are used to form an accurate analysis of the specific model's compression quality.
+The core pipeline compresses input images into latent space with a Stable Diffusion VAE, reconstructs them, and compares outputs against originals. The results are used to study quality-vs-size tradeoffs across compression formats.
 
-<img src="images\vae_example.png" width="600">
+<img src="images/vae_example.png" width="600" alt="VAE compression example">
 
-RunwayML's Stable Diffusion v1.5 was utilized for the purposes of this project, specifically the lower storage-intensive 'pruned-emaonly' weight.
+The implementation uses RunwayML Stable Diffusion v1.5 (pruned-emaonly). The latent scaling constant follows the approach from [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752).
 
-The scalar used frequently in the code is from [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752) and serves as the inverse standard deviation for the latents of the Variational Autoencoder used in Stable Diffusion 1.5.
+For full methodology and analysis, see the accompanying paper: lossy_image_compression_paper.pdf.
 
-The paper found within this file at 'lossy_image_compression_paper.pdf' presents much more information than is easily shown within a markdown file. Please read the paper for further information on the project.
+## Technical Highlights
 
-## Features
-- Img2img VAE compression
-- PNG compression
-- WebP compression
-- File size reduction 
-- Latent representation
-- Image Quality Assessments
-  - Structural Similarity Index 
-  - Mean Squared Error
-  - Peak-Signal-to-Noise Ratio
-  
+- Stable Diffusion VAE-based img2img compression and reconstruction.
+- Multi-format output comparison including PNG and WebP.
+- Automated quality scoring with SSIM, MSE, and PSNR.
+- File size tracking to evaluate practical compression performance.
+- Modular architecture separating orchestration and metric logic.
 
-## Getting Started
+## Project Structure
 
-###  Prerequisites
-- An Integrated Development Environment (IDE) like Visual Studio Code.
-- Python 3.6 or higher
-- OpenCV Library
-- NumPy Library
-- Diffusers Library
-- Transformers Library
-- FastDownload Library
-- Pandas Library
-- PyTorch Library
-- Matplot Library
+- main.py: Runs the full experiment and reporting workflow.
+- vae_module.py: Handles latent encode/decode and reconstruction logic.
+- friqa_module.py: Computes image quality metrics and comparisons.
+- images/: Input assets used for evaluation.
+- output/: Reconstructed images and generated outputs.
+- logbook.md: Research notes and iterative development record.
 
-### Python Scripts
-- main.py: The main script; Used to run the other modules.
-- vae_module.py: Contains the functions that allow for VAE compression
-- friqa_module.py: Contains the functions that allow for Image Quality Assessments
+## Requirements
 
-### Installation
-Clone the repository:
+- Python 3.6+
+- opencv-python
+- numpy
+- diffusers
+- transformers
+- fastdownload
+- pandas
+- torch
+- matplotlib
 
-git clone https://github.com/qmmartin/Portfolio
+Install dependencies:
 
-Open the project in your preferred IDE.
+```bash
+python -m pip install opencv-python numpy diffusers transformers fastdownload pandas torch matplotlib
+```
 
-### Running the Code
+## Usage
 
- ***Important: Running this code will automatically download the Safetensors model used to handle the VAE Compression. This may take some time.**
-1. Open the 'img_compression_research_project' folder in Visual Studio or other IDE
-2. Run 'main.py' **Important: This will overwrite any images in the output folder found on the original repository. This may take some time**
+1. Open the img_compression_research_project folder.
+2. Run main.py.
 
-### How It Works
-1. VAE Compression:
-   - The original image is compressed by the VAE into a latent representation.
-2. VAE Decompression:
-   - The VAE decompresses the latent representation into an image that is highly similar to the original.
-3. Image Quality Assessment:
-   - Image Quality Assessments are performed on the original image and the new image to aquire three separate accuracy scores that can be used to judge the model's accuracy.
+Notes:
+
+- The first run may download model weights and take extra time.
+- Existing files in output/ may be overwritten.
+
+## Method
+
+1. Encode the original image into latent space using the VAE.
+2. Decode latents back into a reconstructed image.
+3. Compare original vs reconstructed output with SSIM, MSE, and PSNR.
+4. Analyze visual quality and file size changes together.
 
 ## Acknowledgements
-### Images
-- VAE Example Image - [VAE Example](https://towardsdatascience.com/stable-diffusion-using-hugging-face-501d8dbdd8)
-- VAE Test Image 1 - [Squirrel](https://upload.wikimedia.org/wikipedia/commons/1/1c/Squirrel_posing.jpg)
-- VAE Test Image 2 - [Rockefeller Center](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg/798px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg)
-- VAE Test Image 3 - [Neon](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Neon.JPG/799px-Neon.JPG)
-- VAE Test Image 4 - [Starry Night](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/757px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg)
-- VAE Test Image 5 - [Alto Saxophone](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Alto_saxophone-E_1685-IMG_7092-gradient.jpg/600px-Alto_saxophone-E_1685-IMG_7092-gradient.jpg)
 
-### Libraries
-- OpenCV Library - https://opencv.org
-- NumPy Library - https://numpy.org
-- Diffusers Library - https://github.com/huggingface/diffusers
-- Transformers Library - https://github.com/huggingface/transformers
-- FastDownload Library - https://pypi.org/project/fastdownload/
-- IO Library - https://www.askpython.com/python-modules/python-io-module
-- Pandas Library - https://pandas.pydata.org/docs/getting_started/install.html
+Image sources:
+
+- [Squirrel](https://upload.wikimedia.org/wikipedia/commons/1/1c/Squirrel_posing.jpg)
+- [Rockefeller Center](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg/798px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg)
+- [Neon](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Neon.JPG/799px-Neon.JPG)
+- [Starry Night](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/757px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg)
+- [Alto Saxophone](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Alto_saxophone-E_1685-IMG_7092-gradient.jpg/600px-Alto_saxophone-E_1685-IMG_7092-gradient.jpg)
+
+Libraries and frameworks:
+
+- [OpenCV](https://opencv.org)
+- [NumPy](https://numpy.org)
+- [Diffusers](https://github.com/huggingface/diffusers)
+- [Transformers](https://github.com/huggingface/transformers)
+- [fastdownload](https://pypi.org/project/fastdownload/)
+- [pandas](https://pandas.pydata.org/docs/getting_started/install.html)
+- [PyTorch](https://pytorch.org)
 
 
 

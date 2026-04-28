@@ -1,52 +1,61 @@
-# imgs_2_panorama
+# Images to Panorama
+
+This project builds a panorama from overlapping images using a custom computer vision pipeline implemented in Python.
 
 ## Overview
-This project was created as part of an assignment in a Graphics Programming class, focusing on using Python and various libraries to achieve different computer vision effects and functions. The goal of the project was to combine three overlapping images into a single panoramic image without reducing the size of the original images.
 
-For an in-depth breakdown of the code, please read the presentation found at 'imgs_2_panorama.pdf'
+Created for a Graphics Programming course, this project focuses on image alignment, stitching, blending, and post-processing to produce a clean final panorama without shrinking source images.
 
-## Features
-- Uses NumPy and OpenCV libraries for image processing.
-- Combines multiple images into a seamless panorama.
-- Handles keypoint detection and matching.
-- Crops the final panorama to remove excess black space.
+For a deeper walkthrough, see imgs_2_panorama.pdf.
 
-## Getting Started
+## Technical Highlights
 
-### Prerequisites
-- Python 3.6 or higher.
-- An Integrated Development Environment (IDE) like Visual Studio Code.
-- NumPy library.
-- OpenCV library.
+- Keypoint detection and feature matching between adjacent image pairs.
+- Geometric translation and placement onto a shared output canvas.
+- Overlap handling and blending to reduce visible seams.
+- Automatic crop cleanup to remove black borders from the stitched output.
 
-### Installation
-Clone the repository:
+## Project Structure
 
-git clone https://github.com/qmmartin/Portfolio
+- pano.py: Main panorama stitching pipeline.
+- input_imgs/: Input images used for stitching.
+- output_imgs/: Intermediate and final outputs.
+- supplemental_code/: Supporting coursework implementations.
 
-Open the project in your preferred IDE.
+## Requirements
 
-### Running the Project
-1. Open the 'imgs_2_panorama' folder in Visual Studio or other IDE
-2. Run pano.py
+- Python 3.6+
+- numpy
+- opencv-python
 
-### How It Works
-1. Keypoint Matching:
-   - The script first creates keypoint matches between the leftmost and center images, as well as between the center and rightmost images.
+Install dependencies:
 
-        <img src="output_imgs\matches.png" width="400">
+```bash
+python -m pip install numpy opencv-python
+```
 
-2. Image Translation:
-   - Using the keypoints, the script determines the correct placement of each image on a new canvas.
+## Usage
 
-        <img src="output_imgs\out1.png" width="400">  <img src="output_imgs\out2.png" width="400">  <img src="output_imgs\out3.png" width="400">
+1. Open the imgs_2_panorama folder.
+2. Run pano.py.
+3. Check output_imgs/ for intermediate visualizations and final panorama results.
 
-3. Image Merging:
-   - Masks are created to blend the overlapping sections of the images, preventing pixel overlap and discoloration.
+## Method
 
-        <img src="output_imgs\panoFinal.png" width="400">
+1. Match keypoints between left-center and center-right images.
 
-4. Cropping:
-   - The final panorama is cropped to remove excess black space, resulting in the final panoramic image.
+   <img src="output_imgs/matches.png" width="400" alt="Keypoint matches">
 
-        <img src="output_imgs\cropped_panoFinal.png" width="400">
+2. Estimate relative placement and transform images onto a common canvas.
+
+   <img src="output_imgs/out1.png" width="400" alt="Initial placement step 1">
+   <img src="output_imgs/out2.png" width="400" alt="Initial placement step 2">
+   <img src="output_imgs/out3.png" width="400" alt="Initial placement step 3">
+
+3. Blend overlapping regions to reduce artifacts.
+
+   <img src="output_imgs/panoFinal.png" width="400" alt="Merged panorama before crop">
+
+4. Crop black padding from the stitched image.
+
+   <img src="output_imgs/cropped_panoFinal.png" width="400" alt="Final cropped panorama">
